@@ -11,7 +11,7 @@ class Car():
     mileage = 0
     drivetrain = ""
     seating_capacity = 0
-
+    poop = "me"
 
 
 
