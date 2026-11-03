@@ -48,7 +48,7 @@ From the repository root:
 cd backend
 python3.12 -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.lock
+python -m pip install -r requirements/requirements.lock
 cd ..
 ```
 
@@ -63,7 +63,7 @@ From the repository root:
 ```powershell
 cd backend
 py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.lock
+.\.venv\Scripts\python.exe -m pip install -r requirements/requirements.lock
 cd ..
 ```
 
@@ -126,19 +126,16 @@ daz-my-car/
     vite.config.ts          # frontend server and API proxy
     package-lock.json       # exact frontend dependency versions
   backend/
-    app/
+    app/                    # all backend code
       main.py               # FastAPI application and health route
-      api/                  # request/response schemas and routes
-      services/             # search coordination
-      core/                 # matching rules and ranking
-      structures/           # custom B-tree and heap
-      data/                 # data access and normalization
-    tools/                  # future dataset preparation commands
-    tests/                  # backend tests
-    benchmarks/             # performance experiments
-    requirements.in         # direct runtime dependencies
-    requirements-dev.in     # test/lint dependencies
-    requirements.lock       # installed runtime and development versions
+      Car.py                # car record
+      BplusTree.py          # B+ tree price index
+      PQueue.py             # heap-based priority queue
+      MergeSort.py          # merge sort
+    requirements/
+      requirements.in       # direct runtime dependencies
+      requirements-dev.in   # test/lint dependencies
+      requirements.lock     # installed runtime and development versions
   data/
     raw/                    # original CSV; local only
     prepared/               # derived data and indexes; local only
@@ -175,12 +172,10 @@ npm --prefix frontend run build
 For Python, from `backend/` with `.venv` activated:
 
 ```bash
-python -m ruff check app tools tests benchmarks
-python -m pytest tests
+python -m ruff check app
 ```
 
-No backend test suite exists yet; pytest reporting no tests is not a passing
-verification of the application. Ruff may flag starter formatting to clean up.
+No backend test suite exists yet. Ruff may flag starter formatting to clean up.
 
 ## Dependency changes
 
@@ -191,8 +186,8 @@ For Python, update the relevant `.in` file, install in the project environment,
 and regenerate the lockfile from `backend/`:
 
 ```bash
-python -m pip install -r requirements-dev.in
-python -m pip freeze > requirements.lock
+python -m pip install -r requirements/requirements-dev.in
+python -m pip freeze > requirements/requirements.lock
 ```
 
 The lock records the current macOS environment. If a platform-specific package
@@ -217,5 +212,4 @@ Use a short branch and a reviewed pull request for each change. Keep the README,
 API contract and tests aligned with implementation changes.
 
 Never commit virtual environments, `node_modules`, build output, `.env` files,
-or the raw/prepared datasets. The root `.gitignore` excludes these; small
-synthetic test fixtures can live under `backend/tests/`.
+or the raw/prepared datasets. The root `.gitignore` excludes these.
