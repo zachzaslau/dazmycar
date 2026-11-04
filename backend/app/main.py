@@ -2,7 +2,6 @@ from fastapi import FastAPI
 
 from app.Load import load_cars
 from app.Score import score
-from app.Car import Car
 
 try:
     tree = load_cars( "../data/prepared/data.csv", 64 )
