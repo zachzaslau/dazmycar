@@ -1,6 +1,6 @@
 class Car():
 
-    def __init__(self, make, model, bodyType, color, year, fuel_type, transmission, price, damage, mileage, drivetrain, seating_capacity):
+    def __init__( self, make, model, bodyType, color, year, fuel_type, transmission, price, damage, mileage, drivetrain, seating_capacity, car_id ):
         self.make = make
         self.model = model
         self.bodyType = bodyType
@@ -13,3 +13,5 @@ class Car():
         self.mileage = mileage
         self.drivetrain = drivetrain
         self.seating_capacity = seating_capacity
+        self.car_id = car_id
+        self.score = -1
