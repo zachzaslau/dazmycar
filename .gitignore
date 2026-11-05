@@ -8,11 +8,6 @@ Thumbs.db
 !.env.example
 !.env.*.example
 
-# JavaScript dependencies and builds
-node_modules/
-dist/
-*.tsbuildinfo
-
 # Python virtual environments and bytecode
 .venv/
 venv/
@@ -32,14 +27,8 @@ coverage/
 playwright-report/
 test-results/
 
-# Local datasets, generated indexes and search caches
-/data/raw/*
-/data/prepared/*
-/data/cache/*
-!/data/raw/.gitkeep
-!/data/prepared/.gitkeep
-!/data/prepared/data.csv
-!/data/cache/.gitkeep
+# Local dataset copy
+/data/cleaned_cars_data.csv
 
 # Generated search results page
 /output/
