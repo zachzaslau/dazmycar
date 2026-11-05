@@ -15,8 +15,6 @@ except Exception as error:
     print( "Failed to load cars!" )
     print( error )
 
-###
-
 while True:
     price_range = input( "Enter the maximum price for your car search (Ex. $35000 [NO COMMAS] ).\nMax Price: $" )
     try:
@@ -161,7 +159,5 @@ results = score( preferences, cars )
 
 merge_sorted = merge_sort( results )
 heap_sorted = heap_sort( results )
-
-###
 
 write_results( merge_sorted )
