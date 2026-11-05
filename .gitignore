@@ -38,7 +38,6 @@ test-results/
 /data/cache/*
 !/data/raw/.gitkeep
 !/data/prepared/.gitkeep
-!/data/prepared/cleaned_cars_data.csv
 !/data/cache/.gitkeep
 
 # Generated search results page
