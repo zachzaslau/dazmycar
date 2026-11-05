@@ -1,0 +1,94 @@
+.car-card {
+    overflow: hidden;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgb( 0 0 0 / 10% );
+}
+
+.car-card-media {
+    position: relative; 
+}
+
+.car-card-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover; 
+}
+
+.car-card-image-default {
+    padding: 24px;
+    object-fit: contain;
+    background: #f6f9fc;
+}
+
+.car-card-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: #000080;
+    color: #ffffff;
+    font-size: 13px; 
+    font-weight: 600;
+}
+
+.car-card-body {
+    padding: 14px
+}
+
+.car-card-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.car-card-price {
+    margin-top: 6px;
+    font-size: 18px; 
+    font-weight: 700;
+}
+
+.car-card-mileage {
+    margin-top: 4px;
+    font-size: 13px; 
+    color: #000000; 
+}
+
+.car-card-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 12px; 
+    font-size: 13px
+}
+
+.car-card-specs span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px; 
+}
+
+.car-card-specs img {
+    width: 12px;
+    height: 12px;
+}
+
+.results {
+    margin: 0;
+    padding: 32px;
+    background: #f6f9fc;
+    font-family: system-ui, sans-serif;
+}
+
+.results-heading {
+    margin: 32px 0 16px;
+    font-size: 22px;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax( 260px, 1fr ) );
+    gap: 20px;
+}

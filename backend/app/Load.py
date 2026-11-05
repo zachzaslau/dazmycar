@@ -5,14 +5,7 @@ from app.Car import Car
 
 transmissions = {
     "A": "Automatic",
-    "CVT": "Automatic",
-    "Dual Clutch": "Automatic",
     "M": "Manual"
-}
-
-fuel_types = {
-    "Flex Fuel Vehicle": "Gasoline",
-    "Biodiesel": "Diesel"
 }
 
 def load_cars( data_path, order ):
@@ -30,13 +23,14 @@ def load_cars( data_path, order ):
                 row["body_type"], 
                 row["color"], 
                 int( row["year"] ), 
-                fuel_types.get( row["fuel_type"], row["fuel_type"]), 
+                row["fuel_type"], 
                 transmissions.get( row["transmission"], row["transmission"] ), 
                 int( row["price_cents"] ), 
                 row["has_accidents"] == "true",
                 int( row["mileage"] ),
                 row[ "drivetrain" ],
                 int( row["seating"] ),
+                row["image_url"],
                 car_id
             )
 

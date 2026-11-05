@@ -41,6 +41,9 @@ test-results/
 !/data/prepared/cleaned_cars_data.csv
 !/data/cache/.gitkeep
 
+# Generated search results page
+/output/
+
 # Logs and temporary editor files
 *.log
 *.swp
